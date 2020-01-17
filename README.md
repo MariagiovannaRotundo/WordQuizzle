@@ -1,10 +1,8 @@
 # Laboratorio di Reti, Corsi A e B
-
 # Word Quizzle (WQ)
-
 # Progetto di Fine Corso
-
 # A.A. 2019/20
+
 
 # 1. Descrizione del Problema
 
@@ -19,22 +17,27 @@ implementata secondo una architettura client server.
 Di seguito sono specificate le operazioni offerte dal servizio WQ. In sede di implementazione è
 possibile aggiungere ulteriori parametri se necessario.
 
-### Registrazione di un utente ​: per inserire un nuovo utente, il server mette a disposizione una
+### Registrazione di un utente ​: 
+per inserire un nuovo utente, il server mette a disposizione una
 
-### operazione ​ registra_utente(nickUtente,password). ​Il server risponde con un codice che può
+### operazione ​ registra_utente(nickUtente,password). 
+​Il server risponde con un codice che può
 
 indicare l’avvenuta registrazione, oppure, se il nickname è già presente, o se la password è
 vuota, restituisce un messaggio d’errore. Come specificato in seguito, le registrazioni sono tra
 le informazioni da persistere.
 
-### login(nickUtente, password): ​Login di un utente ​già registrato per accedere al servizio. Il server
+### login(nickUtente, password): 
+​Login di un utente ​già registrato per accedere al servizio. Il server
 
 risponde con un codice che può indicare l’avvenuto login, oppure, se l’utente ha già effettuato la
 login o la password è errata, restituisce un messaggio d’errore.
 
-### logout(nickUtente) ​: effettua il logout dell’utente dal servizio.
+### logout(nickUtente) ​: 
+effettua il logout dell’utente dal servizio.
 
-### aggiungi_amico (nickUtente, nickAmico): ​registrazione di un’amicizia: aggiungere un amico alla
+### aggiungi_amico (nickUtente, nickAmico): 
+​registrazione di un’amicizia: aggiungere un amico alla
 
 cerchia di amici di un utente. Viene creato un arco non orientato tra i due utenti (se A è amico
 di B, B è amico di A). Il Server risponde con un codice che indica l’avvenuta registrazione
@@ -44,15 +47,15 @@ esistente. Non è necessario che il server richieda l’accettazione dell’amic
 _nickAmico._
 
 
-### lista_amici(nickUtente): ​utilizzata da ​un utente per visualizzare la lista dei propri amici, fornendo
+### lista_amici(nickUtente): ​
+utilizzata da ​un utente per visualizzare la lista dei propri amici, fornendo
 
 le proprie generalità. Il server restituisce un oggetto JSON che rappresenta la lista degli amici.
-_sfida(nickUtente, nickAmico):_ l’utente nickUtente intende sfidare l’utente di nome nickAmico. Il
+
+### sfida(nickUtente, nickAmico):_ l’utente nickUtente intende sfidare l’utente di nome nickAmico. Il
 server controlla che nickAmico appartenga alla lista di amicizie di nickUtente, in caso negativo
-restituisce un codice di errore e l’operazione termina. In caso positivo, il server invia a
-
-### nickAmico ​una richiesta di accettazione della sfida e, solo dopo che la richiesta è stata
-
+restituisce un codice di errore e l’operazione termina. In caso positivo, il server invia a 
+nickAmico ​una richiesta di accettazione della sfida e, solo dopo che la richiesta è stata
 accettata, la sfida può avere inizio (se la risposta non è stata ricevuta entro un intervallo di
 tempo T1 si considera la sfida come non accettata). La sfida riguarda la traduzione di una lista
 di parole italiane in parole inglesi, nel minimo tempo possibile.
